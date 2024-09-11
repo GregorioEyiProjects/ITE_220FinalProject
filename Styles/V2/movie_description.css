@@ -1,0 +1,164 @@
+*{
+ 
+}
+
+.main_container{
+    margin-left: 150px;
+    margin-right: 150px;
+    border: 1px solid white;
+    background: rgb(10, 10, 10);
+    color: white;
+    padding: 15px;
+}
+
+.movie_title{
+    font-family: system-ui;
+}
+
+.img_style{
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+}
+
+.main_cast_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cast_member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+.actor_name {
+    margin: 0; 
+}
+
+
+.web_title{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.web_title_link{
+    text-decoration: none;
+}
+
+.movie_title{
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.custom_description{
+    font-size: 25px;   
+}
+
+.cus_description_text{
+    font-weight: 500;
+    font-size: 18px;
+    max-width: 60%;    
+}
+
+.movie_link{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+
+.movie_link::after {
+    content: '←'; /* Unicode left arrow character (\u2190) */
+    color: white; 
+    margin-left: 5px; 
+}
+
+/*VIDEO CONTAINER*/
+.video_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/*ROW*/
+.div_row_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; 
+    border: 1px solid rgb(228, 16, 16);
+}
+
+/*Main cast*/
+.main_cast_text{
+    font-size: 30px;
+    text-align: center;
+}
+
+/*CONTAINERS*/
+.details_container{
+    width: 70%;
+    border: 1px solid white;
+}
+
+.title_image_container{
+    width: 30%;
+    border: 1px solid rgb(43, 26, 191);
+}
+
+.genre_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+/*FOOTER*/
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .footer-links ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .footer-social {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .footer-social a {
+    margin-left: 10px;
+  }
+  
+  .footer-copyright {
+    margin-top: 10px;
+    text-align: center;
+  }

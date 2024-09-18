@@ -170,31 +170,40 @@ INSERT INTO Movie_Genre () VALUES(1,5);
 INSERT INTO Movie_Genre () VALUES(1,6);
 INSERT INTO Movie_Genre () VALUES(2,3);
 
-#all movies
-SELECT movie.name, movie.year_of_release, movie.director, movie.description, movie.movie_link ,ratings.rating_score,trailer.image, trailer.video
-    FROM movie
-    INNER JOIN ratings ON movie.id_movie = ratings.id_movie
-    INNER JOIN trailer ON movie.id_movie = trailer.id_movie;
+# -------------------------- Movie 3----------------------------------
+INSERT INTO Movie (name, year_of_release, director, country, description, movie_link)
+VALUES ("Me time",2022, "John Hamburg", "US" ,"When a stay-at-home dad who dedicates all his time to his children is persuaded to take time off for himself, he gets mixed up in the wild shenanigans of his childhood friend who's celebrating his 44th birthday.", "https://cuevana.biz/pelicula/862551/tiempo-para-mi");
 
-#get movie detials by ID MOVIE from the DB 
-SELECT movie.name, movie.year_of_release, movie.director, movie.country ,movie.description, movie.movie_link ,ratings.rating_score,trailer.image, trailer.video, genre.name_genre
-FROM movie
-INNER JOIN ratings ON movie.id_movie = ratings.id_movie
-INNER JOIN trailer ON movie.id_movie = trailer.id_movie 
-INNER JOIN movie_genre ON movie.id_movie = movie_genre.id_movie
-INNER JOIN genre ON movie_genre.id_genre = Genre.id_genre
-WHERE movie.id_movie = ?;
+#into Ratings table
+INSERT INTO Ratings(rating_score, id_movie) 
+VALUES (5.2, 3);
 
-#get main cast by movie id from the DB 
-SELECT main_cast.character_name AS actor_name, main_cast.character_image
-FROM movie
-INNER JOIN movie_maincast ON movie.id_movie = movie_maincast.id_movie
-INNER JOIN main_cast ON movie_maincast.id_character = main_cast.id_character WHERE movie.id_movie = ?;
+#into Trailer table
+INSERT INTO Trailer (image, video, id_movie) 
+VALUES ("https://m.media-amazon.com/images/M/MV5BNDU0YmUwM2UtMjJmZS00MDJiLTljMTctMTM3YTc1OTk0ZDM1XkEyXkFqcGc@._V1_.jpg", "https://www.youtube.com/watch?v=Mmq_NVwLN_g&ab_channel=Netflix", 3);
 
+#Into genre
+#into Genre table
+INSERT INTO Genre (name_genre) VALUES ("Comedy");
 
-#get movie gender by movie id from the DB 
-SELECT genre.name_genre
-FROM movie
-INNER JOIN movie_genre ON movie.id_movie = movie_genre.id_movie
-INNER JOIN genre ON movie_genre.id_genre = Genre.id_genre
-WHERE movie.id_movie = ?;
+#into Main_cast
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Kevin Hart", "https://assets.fxnetworks.com/cms-next/production/950c40a9-c758-426a-a2f9-be192d3fc395.jpg"); 
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Mark Wahlberg", "https://ntvb.tmsimg.com/assets/assets/43431_v9_bb.jpg?w=360&h=480");
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Regina Hall", "https://image.tmdb.org/t/p/w500/jiFZ4xNrvUUZLBHnJu71CvdN4kj.jpg");
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Che Tafari", "https://resizing.flixster.com/BBhFjWOiU_g_piQGlpwIODewA2Q=/ems.cHJkLWVtcy1hc3NldHMvY2VsZWJyaXRpZXMvYzhiYWY1MWItYzY4NS00YTljLTk5MTktNWFkZWE0ZTYyMmE1LmpwZw==");
+
+#Into movie_maincast table
+INSERT INTO movie_maincast (id_movie, id_character) VALUES(3,9);
+INSERT INTO movie_maincast (id_movie, id_character) VALUES(3,10);
+INSERT INTO movie_maincast (id_movie, id_character) VALUES(3,11);
+INSERT INTO movie_maincast (id_movie, id_character) VALUES(3,12);
+
+#Into Movie_Genre table
+INSERT INTO Movie_Genre (id_movie, id_genre) VALUES(3,7);

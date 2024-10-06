@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 /* General Styles */
@@ -184,4 +185,35 @@ button:active {
     justify-content: space-evenly;
     width: 100%;
    
+=======
+
+.fav-movies{
+    font-size: 30px;
+}
+
+.fav-movies-container{
+    margin-top: 50px;
+}
+
+.fav-movies-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 5px; /* Optional: Adds space between the grid items */
+    border: 1px solid #9b4a4a;
+}
+
+.movie-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #2e27b9;
+}
+
+.watch-delete-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+>>>>>>> 2465aec46218dbac1bb297b97524c9327b1caeea
 }

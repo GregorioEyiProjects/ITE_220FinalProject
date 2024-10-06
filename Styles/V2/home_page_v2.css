@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     margin-left: 150px;
     margin-right: 150px;
@@ -188,3 +189,200 @@ margin-left: 10px;
     color: rgb(254, 250, 250);
     max-width: 80%;
 }
+=======
+body{
+    margin-left: 150px;
+    margin-right: 150px;
+    /*border: 1px solid rgb(45, 44, 44);*/
+    background: rgb(255, 255, 255);
+    color: rgb(22, 21, 21);
+    padding: 15px;
+}
+
+
+.user-profile_contianer{
+    
+}
+
+
+.top_movies_2024_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px; /* Optional: Add space between movies */
+}
+
+.home_page_title{
+    text-decoration: none;   
+    color: rgb(21, 98, 222);
+}
+
+.search_movie{
+   width: 350px;
+   height: 35px;;
+}
+
+.searchButton{
+    height: 40px;;
+}
+
+.movie_title_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e223c9;
+}
+
+.moreCss{
+    font-size: 35px;
+    
+}
+
+.add_movie_btn{
+    border-radius: 10px;
+    background-color: rgb(129, 112, 112);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.add_movie_btn_container {
+    position: relative;
+    display: inline-block;
+}
+
+.hover-text {
+    display: none; /* Hide the text by default */
+    position: absolute; /* Position it absolutely within the container */
+    top: 100%; /* Position it below the button */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text */
+    padding: 5px; /* Optional: padding */
+    z-index: 1; /* Ensure it appears above other elements */
+    background-color: white; /* Add background color to make buttons visible */
+    border: 1px solid #ccc; /* Add border to make it look like a container */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+}
+
+.user-profile-container:hover .hover-text {
+    display: block; /* Show the text when the container is hovered */
+}
+
+.hover-button {
+    display: block; /* Ensure buttons are displayed as block elements */
+    margin: 5px 0; /* Add some margin between buttons */
+    padding: 10px; /* Add padding to make it look like a button */
+    background-color: #007BFF; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Change cursor to pointer */
+    text-align: center; /* Center the text */
+    width: 100%; /* Make buttons take full width of the container */
+}
+
+.hover-button:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}
+
+/*
+.hover-button2:hover + .hover-text {
+    display: block; /* Show the text when the button is hovered 
+}
+*/
+
+
+
+
+.hover-text button {
+    display: block; /* Ensure buttons are displayed as block elements */
+    margin: 5px 0; /* Add some margin between buttons */
+}
+
+.dropdown-menu {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.category_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Optional: Add space between categories */
+}
+
+.movies_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px; 
+    border: 1px solid #da7373;
+    margin-top: 20px;
+}
+
+.movie_item {
+    width: 100%;
+    display: flex;
+    flex-direction: row; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+}
+
+
+
+.movie_details_container{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    border: 1px solid #3241cc;
+}
+
+.movie_link_2{
+    font-size: 20px;
+    color: rgb(9, 9, 9);
+    text-decoration: none;
+}
+
+.movie_link_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 20px;
+    border: 1px solid #9a229c;
+}
+.movie_btn{
+    border-radius: 10px;
+}
+
+.movie_link_2::before {
+    content: '➔ '; /* Unicode left arrow character (\u2190) */
+    color: rgb(15, 14, 14); 
+    margin-left: 5px; 
+}
+
+.movie_details_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px; /* Optional: Add space between details */
+}
+
+.movie_description_container{
+margin-left: 10px;
+
+}
+
+.movie_description{
+    font-size: 16px;
+    color: rgb(9, 9, 9);
+    max-width: 80%;
+}
+
+
+>>>>>>> 2465aec46218dbac1bb297b97524c9327b1caeea

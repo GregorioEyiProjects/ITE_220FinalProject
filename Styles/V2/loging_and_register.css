@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -90,4 +91,98 @@ input[type="submit"]:hover {
     color: red;
     font-size: 15px;
     text-align: center;
+=======
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-self: center;
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}   
+
+.form-btn-submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+input[type="submit"] {
+    background-color: #595da9;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 95%;
+}
+input[type="submit"]:hover {
+    background-color: #4ca7ae;
+}
+
+.password-container {
+    position: relative;
+}
+
+.password-input {
+    padding-right: 30px; /* Add space for the toggle icon */
+}
+
+.password-toggle-icon {
+    position: absolute;
+    top: 70%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.have-an-account-text {
+    text-align: center;
+    color: #8d3232;
+    font-size: 15px;
+}
+
+.have-an-account-link {
+    color: #595da9;
+    text-decoration: none;
+}
+
+.error-message{
+    color: red;
+    font-size: 15px;
+    text-align: center;
+>>>>>>> 2465aec46218dbac1bb297b97524c9327b1caeea
 }

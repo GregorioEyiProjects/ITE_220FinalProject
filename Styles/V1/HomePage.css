@@ -1,0 +1,225 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+/* -----  BANNER CSS ----- */
+.banner {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/020/115/455/non_2x/food-background-breakfast-with-yogurt-granola-or-muesli-strawberries-banner-image-for-website-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 65vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    border-radius: 15px;
+}
+
+
+
+.menu_navigation{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*It centers the items horizontalyS*/
+    margin-top: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.menu_navigation .logo {
+    margin: 0; /*To remove default margin */
+}
+
+.logoText{
+    margin-left:25px;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+.nav_containner{
+    margin-right:25px;
+}
+
+.menu_navigation nav {
+    display: flex;
+    gap: 10px; 
+}
+
+.menu_navigation nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+nav a:hover {
+    background-color: #ab7171;
+    border-radius: 5px;
+    text-decoration: line-through;
+}
+
+/*----- Category CSS ----- */
+.category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+/* -----  category card CSS ----- */
+
+.cards_container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px; 
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-image: url('https://www.acouplecooks.com/wp-content/uploads/2021/06/Strawberry-Water-006.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);;
+    display: flex;
+    flex-direction: row;
+    transition: transform 0.5s; /* Add transition for smooth scaling */
+}
+
+.card_content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* */ background: rgba(255, 255, 255, 0.8);
+    color: black;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: 110%; /* Scale the background image */
+    background-position: center;
+    z-index: -1; /* Place it behind the content */
+    transition: background-size 0.5s; /* Smooth transition for background scaling */
+}
+
+
+/* -----  ORDER AGAIN CSS ----- */
+.order_again_container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-wrapper {
+    display: flex;
+    animation: slide 10s linear infinite; /* Use animation instead of transition */
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-80%); } /* Move to the fifth image */
+}
+
+.order_again_img {
+    width: 20%; /* Assuming you have 5 images total */
+    flex-shrink: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* -----  FOOTER CSS ----- */
+footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .footer-links ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .footer-social {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .footer-social a {
+    margin-left: 10px;
+  }
+  
+  .footer-copyright {
+    margin-top: 10px;
+  }

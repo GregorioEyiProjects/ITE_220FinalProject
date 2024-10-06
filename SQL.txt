@@ -1,0 +1,209 @@
+DROP DATABASE ITE_220;
+#CREATE DATABASE IF NOT EXISTS ITE_220;
+CREATE DATABASE ITE_220;
+
+USE ITE_220;
+
+CREATE TABLE Movie(
+	id_movie int AUTO_INCREMENT,
+  	name varchar(255) NOT null,
+    year_of_release int(10) NOT null,
+    director varchar(100) DEFAULT null,
+    country varchar(100) NOT null,
+    description varchar(255) NOT null,
+    movie_link varchar(255) DEFAULT null,
+    PRIMARY KEY (id_movie)
+);
+#DROP TABLE Movie;
+
+CREATE TABLE Genre(
+	id_genre int AUTO_INCREMENT,
+    name_genre varchar(100) NOT null,
+    PRIMARY KEY (id_genre)
+);
+
+#Pivot table between Movie and Genre
+CREATE TABLE Movie_Genre(
+	id_movie int,
+    id_genre int,
+    PRIMARY KEY (id_movie, id_genre)
+);
+ALTER TABLE Movie_Genre ADD FOREIGN KEY (id_movie) REFERENCES Movie (id_movie);
+ALTER TABLE Movie_Genre ADD FOREIGN KEY (id_genre) REFERENCES Genre (id_genre);
+
+
+CREATE TABLE Main_cast(
+	id_character int AUTO_INCREMENT,
+  	character_name varchar(100) NOT null,
+    character_image varchar(255) NOT null,
+    PRIMARY KEY (id_character)
+);
+#DROP TABLE Main_cast;
+#ALTER TABLE Main_cast ADD FOREIGN KEY (id_movie) REFERENCES Movie (id_movie);
+
+#Pivot table between Movie and Main_cast
+CREATE TABLE movie_maincast(
+	id_movie int,
+    id_character int,
+    PRIMARY KEY(id_movie, id_character)
+);
+ALTER TABLE movie_maincast ADD FOREIGN KEY (id_movie) REFERENCES Movie (id_movie);
+ALTER TABLE movie_maincast ADD FOREIGN KEY (id_character) REFERENCES Main_cast (id_character);
+
+CREATE TABLE Trailer(
+	id_trailer int AUTO_INCREMENT,
+    image varchar(255) NOT null,
+    video varchar(255) NOT null,
+    id_movie int,
+    PRIMARY KEY (id_trailer)
+);
+#DROP TABLE Trailer;
+ALTER TABLE Trailer ADD FOREIGN KEY (id_movie) REFERENCES Movie (id_movie);
+
+CREATE TABLE Ratings(
+	id_Rating int AUTO_INCREMENT,
+    rating_score DOUBLE,
+    id_movie int,
+    PRIMARY KEY (id_Rating)
+);
+
+#DROP TABLE Ratings;
+ALTER TABLE Ratings ADD FOREIGN KEY (id_movie) REFERENCES Movie (id_movie);
+
+
+#User creation
+CREATE TABLE Users(
+	id_user int AUTO_INCREMENT,
+    username varchar(100) DEFAULT null,
+    gmail varchar(150) UNIQUE DEFAULT null,
+    password varchar(150) DEFAULT null,
+	PRIMARY KEY(id_user)
+);
+
+CREATE TABLE Users_movie(
+	id_user int,
+    id_movie int,
+    PRIMARY KEY (id_user, id_movie)
+);
+ALTER TABLE Users_movie ADD FOREIGN KEY (id_user) REFERENCES Users (id_user);
+ALTER TABLE Users_movie ADD FOREIGN KEY (id_movie) REFERENCES Movie (id_movie);
+
+# ----------- INSERTS ------------
+#into Movie table
+
+#Movie 1
+INSERT INTO Movie (name, year_of_release, director, country, description, movie_link)
+VALUES ("Deadpool & Wolverine",2024, "Shawn Levy", "UK" ,"The Time Variance Authority (TVA) offers Deadpool a place in the Marvel Cinematic Universe, but he instead recruits a variant of Wolverine to save his universe from extinction.", "https://filmhubtv.com/en/movie/533535/deadpool-wolverine?is");
+
+#into Genre table
+INSERT INTO Genre (name_genre) VALUES ("Action");
+INSERT INTO Genre (name_genre) VALUES ("Comedy");
+INSERT INTO Genre (name_genre) VALUES ("Drama");
+INSERT INTO Genre (name_genre) VALUES ("Horror");
+INSERT INTO Genre (name_genre) VALUES ("Sci-Fi");
+INSERT INTO Genre (name_genre) VALUES ("Super hero");
+
+
+#into Ratings table
+INSERT INTO Ratings(rating_score, id_movie) 
+VALUES (8.0, 1);
+
+#into Trailer table
+INSERT INTO Trailer (image, video, id_movie) 
+VALUES ("https://m.media-amazon.com/images/M/MV5BNzRiMjg0MzUtNTQ1Mi00Y2Q5LWEwM2MtMzUwZDU5NmVjN2NkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", "https://www.youtube.com/watch?v=73_1biulkYk", 1);
+
+#into Main_cast table
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Ryan Reynolds", "https://upload.wikimedia.org/wikipedia/commons/1/14/Deadpool_2_Japan_Premiere_Red_Carpet_Ryan_Reynolds_%28cropped%29.jpg");
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Hugh Jackman", "https://cdn.britannica.com/47/201647-050-C547C128/Hugh-Jackman-2013.jpg");
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Emma Corrin", "https://m.media-amazon.com/images/M/MV5BNWRlNDA3YzUtYjhiZi00NTI5LThmMjUtYWRiMTg1ZmM2YTg3XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"); 
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Matthew Macfadyen", "https://m.media-amazon.com/images/M/MV5BMjQ1ODY2ODA5MV5BMl5BanBnXkFtZTgwNDA3MzkxNzM@._V1_.jpg");
+
+#Into movie_maincast table
+INSERT INTO movie_maincast () VALUES(1,1);
+INSERT INTO movie_maincast () VALUES(1,2);
+INSERT INTO movie_maincast () VALUES(1,3);
+INSERT INTO movie_maincast () VALUES(1,4);
+
+#Movie 2
+USE ITE_220;
+#into Movie table
+INSERT INTO Movie (name, year_of_release, director, country, description, movie_link)
+VALUES ("Oppenheimer",2023, "Christopher Nolan", "US" ,"The story of the scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.", "https://www.tokyvideo.com/video/watch-oppenheimer-2023-fullmovie-hd-english");
+
+#into Ratings table
+INSERT INTO Ratings(rating_score, id_movie) 
+VALUES (8.3, 2);
+
+#into Trailer table
+INSERT INTO Trailer (image, video, id_movie) 
+VALUES ("https://sm.ign.com/ign_tr/movie/c/christophe/christopher-nolan-j-robert-oppenheimer-film_8e8f.jpg", "https://www.youtube.com/watch?v=bK6ldnjE3Y0", 2);
+
+#into Main_cast
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Cillian Murphy", "https://static01.nyt.com/images/2023/05/28/multimedia/28CILLIAN-MURPHY-01-tzqm/28CILLIAN-MURPHY-01-tzqm-mediumSquareAt3X.jpg");
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Emily Blunt", "https://upload.wikimedia.org/wikipedia/commons/4/4d/EmilyBluntTIFFSept2012.jpg");
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Matt Damon", "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Matt_Damon_at_Berlinale_2024_Ausschnitt.jpg/1200px-Matt_Damon_at_Berlinale_2024_Ausschnitt.jpg"); 
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Robert Downey Jr.", "https://cdn.britannica.com/99/254199-050-98CF4E04/Robert-Downey-JR-UK-premier-Oppenheimer-movie-July-2023.jpg");
+
+#Into movie_maincast table
+INSERT INTO movie_maincast () VALUES(2,5);
+INSERT INTO movie_maincast () VALUES(2,6);
+INSERT INTO movie_maincast () VALUES(2,7);
+INSERT INTO movie_maincast () VALUES(2,8);
+
+#Into Movie_Genre table
+INSERT INTO Movie_Genre () VALUES(1,1);
+INSERT INTO Movie_Genre () VALUES(1,5);
+INSERT INTO Movie_Genre () VALUES(1,6);
+INSERT INTO Movie_Genre () VALUES(2,3);
+
+# -------------------------- Movie 3----------------------------------
+INSERT INTO Movie (name, year_of_release, director, country, description, movie_link)
+VALUES ("Me time",2022, "John Hamburg", "US" ,"When a stay-at-home dad who dedicates all his time to his children is persuaded to take time off for himself, he gets mixed up in the wild shenanigans of his childhood friend who's celebrating his 44th birthday.", "https://cuevana.biz/pelicula/862551/tiempo-para-mi");
+
+#into Ratings table
+INSERT INTO Ratings(rating_score, id_movie) 
+VALUES (5.2, 3);
+
+#into Trailer table
+INSERT INTO Trailer (image, video, id_movie) 
+VALUES ("https://m.media-amazon.com/images/M/MV5BNDU0YmUwM2UtMjJmZS00MDJiLTljMTctMTM3YTc1OTk0ZDM1XkEyXkFqcGc@._V1_.jpg", "https://www.youtube.com/watch?v=Mmq_NVwLN_g&ab_channel=Netflix", 3);
+
+#Into genre
+#into Genre table
+INSERT INTO Genre (name_genre) VALUES ("Comedy");
+
+#into Main_cast
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Kevin Hart", "https://assets.fxnetworks.com/cms-next/production/950c40a9-c758-426a-a2f9-be192d3fc395.jpg"); 
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Mark Wahlberg", "https://ntvb.tmsimg.com/assets/assets/43431_v9_bb.jpg?w=360&h=480");
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Regina Hall", "https://image.tmdb.org/t/p/w500/jiFZ4xNrvUUZLBHnJu71CvdN4kj.jpg");
+
+INSERT INTO Main_cast (character_name, character_image)
+VALUES ("Che Tafari", "https://resizing.flixster.com/BBhFjWOiU_g_piQGlpwIODewA2Q=/ems.cHJkLWVtcy1hc3NldHMvY2VsZWJyaXRpZXMvYzhiYWY1MWItYzY4NS00YTljLTk5MTktNWFkZWE0ZTYyMmE1LmpwZw==");
+
+#Into movie_maincast table
+INSERT INTO movie_maincast (id_movie, id_character) VALUES(3,9);
+INSERT INTO movie_maincast (id_movie, id_character) VALUES(3,10);
+INSERT INTO movie_maincast (id_movie, id_character) VALUES(3,11);
+INSERT INTO movie_maincast (id_movie, id_character) VALUES(3,12);
+
+#Into Movie_Genre table
+INSERT INTO Movie_Genre (id_movie, id_genre) VALUES(3,7);

@@ -1,0 +1,173 @@
+html, body {
+    background-color: #000; /* Черный фон */
+    color: white; /* Белый цвет текста для контраста */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+/* Buttons */
+button {
+    background-color: #880505; /* Original button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Only shadow and slight transform effect */
+}
+
+button:hover {
+    /* Keep original color and size, add a subtle shadow and slight scale */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3); /* Subtle shadow */
+    transform: scale(1.02); /* Slight increase in size */
+}
+
+button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Add glowing effect on focus */
+}
+
+/* Images */
+.img_style, .img_movie_style_style {
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Only shadow and slight transform effect */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.img_style:hover, .img_movie_style_style:hover {
+    /* Keep original size, add shadow and slight scale */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Add shadow around image */
+    transform: scale(1.02); /* Slight increase in size */
+}
+
+/* Links */
+.web_title_link, .movie_link {
+    text-decoration: none;
+    color: #880505; /* Original color */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.web_title_link:hover, .movie_link:hover {
+    color: #c77202; /* Subtle color change on hover */
+}
+
+/* Main container */
+.main_container {
+    margin-left: 150px;
+    margin-right: 150px;
+    border: 1px solid #000;
+    background: #000;
+    color: white;
+    padding: 15px;
+}
+
+/* Movie title */
+.movie_title {
+    font-family: system-ui;
+    color: #880505;
+}
+
+/* Image styles */
+.img_style {
+    width: 180px;
+    height: 250px;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+.img_movie_style_style {
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+/* Cast container */
+.main_cast_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Cast member styling */
+.cast_member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.actor_name {
+    margin: 0;
+}
+
+/* Web title */
+.web_title {
+    font-weight: 500;
+    font-size: 40px;
+}
+
+/* Description text */
+.custom_description {
+    font-size: 25px;
+    color: #880505;
+}
+
+.cus_description_text {
+    font-weight: 500;
+    font-size: 18px;
+    max-width: 60%;
+}
+
+/* Add arrow after movie links */
+.movie_link::after {
+    content: '←'; /* Left arrow character */
+    color: #c77202; 
+    margin-left: 5px;
+}
+
+/* Video container */
+.video_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Row container */
+.div_row_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #c77202;
+}
+
+/* Main cast text */
+.main_cast_text {
+    font-size: 30px;
+    text-align: center;
+}
+
+/* Containers */
+.details_container {
+    width: 70%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.title_image_container {
+    width: 30%;
+    border: 1px solid black;
+}
+
+.genre_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}

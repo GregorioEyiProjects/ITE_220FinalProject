@@ -1,0 +1,109 @@
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-container {
+    width: 80%;
+    max-width: 800px;
+    background-color: #880505;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    color: #ff9900;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Align form items to the center */
+}
+
+.form-container label {
+    color: #ff9900;
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+    max-width: 400px; /* Adjust max-width to your desired width */
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    max-width: 400px; /* Controls the width of input fields */
+    padding: 10px;
+    background-color: black;
+    color: #fff;
+    border: 1px solid #ff9900;
+    border-radius: 5px;
+    margin: 0 auto; /* Centers the input fields */
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    outline: none;
+    border-color: #ff9900;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
+}
+
+button {
+    background-color: #ff9900;
+    color: #880505;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 400px; /* Matches the input fields width */
+    margin: 0 auto; /* Centers the button */
+}
+
+button:hover {
+    background-color: #cc7a00;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #ff9900;
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #cc7a00;
+}
+
+.social-links i {
+    margin-right: 8px;
+}
